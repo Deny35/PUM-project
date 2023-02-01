@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ReCall</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="add">add</string>
+    <string name="jezyk">język</string>
+    <string name="ilosc">Ilość</string>
+    <string name="dodaj">Dodaj</string>
+    <string name="lista">Lista zakupowa</string>
+    <string name="nauczone">Nauczone</string>
+    <string name="do_nauczenia">Do nauczenia</string>
+    <string name="zdjecia">Zdjęcia</string>
+    <string name="rationale_camera">aplikacja wymaga upoważnienia aby uzyskać dostęp do aparatu</string>
+    <string name="error_imageView">Najpierw zrób zdjęcie</string>
+
+
+</resources>

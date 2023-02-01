@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/languageFragment">
+
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="pl.edu.uwr.pum.recall.language.LanguageFragment"
+        android:label="Languages"
+        tools:layout="@layout/fragment_language" >
+        <action
+            android:id="@+id/to_addLanguageFragment"
+            app:destination="@id/addLanguageFragment" />
+        <action
+            android:id="@+id/to_wordHost"
+            app:destination="@id/wordHost" >
+        <argument
+            android:name="lang"
+            app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/addLanguageFragment"
+        android:name="pl.edu.uwr.pum.recall.language.addLanguage.AddLanguageFragment"
+        android:label="Add Language"
+        tools:layout="@layout/fragment_add_language" >
+        <action
+            android:id="@+id/to_languageFragment_from_addLanguage"
+            app:destination="@id/languageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wordHost"
+        android:name="pl.edu.uwr.pum.recall.wordHolder.WordHost"
+        android:label="fragment_word_host"
+        tools:layout="@layout/fragment_word_host" >
+        <action
+            android:id="@+id/action_wordHost_to_addWordFragment"
+            app:destination="@id/addWordFragment"  >
+            <argument
+                android:name="lang"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_wordHost_to_editWordFragment"
+            app:destination="@id/editWordFragment" >
+            <argument
+                android:name="id"
+                app:argType="integer" />
+            <argument
+                android:name="status"
+                app:argType="integer" />
+            <argument
+                android:name="lang"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_wordHost_to_addPictureFragment"
+            app:destination="@id/addPictureFragment"  >
+            <argument
+                android:name="lang"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_wordHost_to_pictureDetailFragment"
+            app:destination="@id/pictureDetailFragment">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_wordHost_to_languageFragment"
+            app:destination="@id/languageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addWordFragment"
+        android:name="pl.edu.uwr.pum.recall.wordHolder.addWord.AddWordFragment"
+        android:label="fragment_add_word"
+        tools:layout="@layout/fragment_add_word" >
+        <action
+            android:id="@+id/action_addWordFragment_to_wordHost"
+            app:destination="@id/wordHost" >
+        <argument
+        android:name="lang"
+        app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/editWordFragment"
+        android:name="pl.edu.uwr.pum.recall.wordHolder.editWord.EditWordFragment"
+        android:label="fragment_edit_word"
+        tools:layout="@layout/fragment_edit_word" >
+        <action
+            android:id="@+id/action_editWordFragment_to_wordHost"
+            app:destination="@id/wordHost" >
+            <argument
+                android:name="lang"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/addPictureFragment"
+        android:name="pl.edu.uwr.pum.recall.wordHolder.addPicture.AddPictureFragment"
+        android:label="AddPictureFragment" >
+        <action
+            android:id="@+id/action_addPictureFragment_to_wordHost"
+            app:destination="@id/wordHost"  >
+            <argument
+                android:name="lang"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/pictureDetailFragment"
+        android:name="pl.edu.uwr.pum.recall.wordHolder.picture_detail.PictureDetailFragment"
+        android:label="fragment_picture_detail"
+        tools:layout="@layout/fragment_picture_detail" />
+    <activity
+        android:id="@+id/mainActivity2"
+        android:name="pl.edu.uwr.pum.recall.MainActivity2"
+        android:label="activity_main2"
+        tools:layout="@layout/activity_main2" />
+</navigation>
