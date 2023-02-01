@@ -1,67 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+tools:context=".wordHolder.word.UnknownWordFragment">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".wordHolder.word.UnknownWordFragment">
+    android:layout_marginTop="10dp"
+    android:orientation="horizontal">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
+    <TextView
+        android:id="@+id/oryginalText"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="19sp"
+        android:text="Angielski"
+        android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/oryginalText"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="19sp"
-            android:text="Angielski"
-            android:textStyle="bold"/>
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
 
 
-        <TextView
-            android:id="@+id/translateText"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="19sp"
-            android:textStyle="bold"
-            android:text="Polski" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/translateText"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:text="polski" />
+</LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="40dp"
-        android:orientation="vertical">
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/listRecyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="40dp"
+    android:layout_marginBottom="16dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toStartOf="parent" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/listRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-
-
-        <Button
-            android:id="@+id/buttonAdd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:text="DOODAJ"
-            android:textSize="24sp"
-            />
-
-
-    </LinearLayout>
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/addButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="24dp"
+    android:layout_marginBottom="24dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:src="@drawable/ic_add"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:contentDescription="@string/add" />
 
 
-</FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

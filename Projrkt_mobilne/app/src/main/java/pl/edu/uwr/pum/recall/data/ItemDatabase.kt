@@ -27,7 +27,7 @@ import pl.edu.uwr.pum.recall.model.WordModel
                     return  INSTANCE ?: Room.databaseBuilder(
                         context.applicationContext,
                         ItemDatabase::class.java,
-                        "d4"
+                        "dataBase"
                     ).build().also {
                         INSTANCE = it
                     }

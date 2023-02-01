@@ -38,7 +38,7 @@ class UnknownWordFragment(val language: String) : Fragment() {
         viewModel.getWard(language, 0).observe(viewLifecycleOwner, adapter::submitList)
         swipeToDelete(adapter)
         swipeToUpdate(adapter)
-        binding.buttonAdd.setOnClickListener {
+        binding.addButton.setOnClickListener {
             findNavController().navigate(WordHostDirections.actionWordHostToAddWordFragment(language))
             }
         }
